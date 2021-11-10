@@ -1,0 +1,73 @@
+#footer {
+    padding-top: $pd-8;
+    padding-bottom: $pd-8*3;
+    background-image: url(../../img/footer_background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include styleText($color-white-1,$fs-1,$fw-2);
+    &
+    .footer_items {
+        & h3 {
+            @include styleText($color-white-1,$fs-6,$fw-3);
+            margin-bottom:$mg-4
+        };
+        & p {
+            padding: $pd-3 0;
+        }
+        & i {
+            padding-right: $pd-2;
+        };
+        & a {
+            text-decoration: none;
+            color: $color-white-1;
+            transition: all .3s;
+            
+            &:hover {
+                color: $color-dark-1;
+            }
+        };
+        & ul li {
+            list-style: none;
+            padding: $pd-3 0;
+            border-bottom: 1px solid rgba($color-dark-1,0.1)
+        }       
+    }
+    .footer_input {
+        display: block;
+        padding: $pd-4;
+        margin-top:$mg-1;
+        margin-bottom: $mg-2;
+        border:1px solid rgba($color-white-1,0.1);
+        border-radius: $bd-radius-1;
+        background-color: $color-trans;
+        width: 100%;
+        text-align: center;
+        outline: none;
+        transition: all .5s;
+        &::placeholder {
+            color:$color-white-1
+        }
+        &:focus {
+            border:1px solid $color-white-1
+        }
+    }
+    .footer_btn {
+        outline: none;
+        border-radius: $bd-radius-1;
+        border:$bd-2;
+        width: 100%;
+        padding: $pd-4;
+        display: block;
+        transition: all .5s;
+        &:hover {
+            background-color: $color-trans;
+            color: $color-white-1;
+            border: 1px solid $color-white-1;
+        }
+    }
+    & .opacity a:hover{
+        opacity: 0.8;
+        color: $color-white-1;
+    }
+}

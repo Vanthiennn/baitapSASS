@@ -1,0 +1,84 @@
+.content_sass {
+    padding-top:$pd-8*2;
+    position: relative;
+    .container {
+        z-index: 3;
+        position: relative;
+        .content_picture  {
+            margin-bottom: 2em;
+            & img {
+                width: 100%;
+            }
+        }
+        .content_form {
+            .find_course{
+
+                padding-left: $pd-6+5px;
+                padding-right: $pd-6+5px;
+                box-shadow: 0 30px 30px -10px rgba($color-dark-1,0.2);
+                border-radius: $bd-radius-3;
+                background-color: $color-trans;
+                & h1 {
+                    text-align: center;
+                    margin-bottom: $mg-6;
+                }
+                & .input_form {
+                    border-radius: $bd-radius-4;
+                    font-size: $fs-4;
+                    background-color: $color-trans;
+                    padding-left: $pd-9;
+                }
+                & .description {
+                    width: 100%;
+                    padding-left: $pd-9;
+                    padding-top: $pd-2;
+                }
+                & .content_button {
+                    border: $bd-1 solid $color-purple-1;
+                    transition: .3s all ;
+                    box-shadow: 0 0 0 3px $color-purple-1 inset;
+                    margin: $mg-1;
+                    position: relative;
+                    margin-bottom: $mg-7;
+                    @include styleButton($pd-4,$pd-9,$color-purple-1,$bd-radius-1);
+                    @include styleText($color-white-1,$fs-4,$fw-1);
+                    &:hover {
+                        @include styleButtonHover($color-trans,$color-purple-1,$bd-1 solid $color-purple-1);
+                        box-shadow: 0 0 0 1px $color-purple-1 inset;        
+                    }
+                }
+            }
+            .content_text {
+                position: relative;
+                & span {
+                    position: absolute;
+                    top: 6px;
+                    left: 20px;
+                    color: $color-purple-1;
+                    font-size: $fs-1;
+                }
+            }
+        }
+    }
+    
+    .bottom_content{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        & img{
+            width: 100%;
+        }
+    } 
+}
+
+@include mediaQuery("medium") {
+    .content_sass{
+        .content_form {
+            .content_button {
+                width: 100%;
+            }
+        }
+    }
+}

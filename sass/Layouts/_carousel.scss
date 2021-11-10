@@ -1,0 +1,43 @@
+.carousel {
+    position: relative;
+    .top_carousel{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        & img{
+            width: 100%;
+        }
+    } 
+    .content_carousel{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: $pd-8 ;
+        padding-top:$pd-8 ;
+
+        .title_carousel{
+            h4{
+                @include styleText($color-purple-1,$fs-5,$fw-3)
+            };
+            h1{
+                @include styleText($color-dark-2,$fs-8,$fw-3)
+            }
+        };
+        .image_carousel img{
+            width: 100%;
+        }
+    };
+    .bottom_carousel{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        & img{
+            width: 100%;
+        }
+    } 
+}

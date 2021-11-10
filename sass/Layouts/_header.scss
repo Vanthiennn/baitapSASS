@@ -1,0 +1,100 @@
+#header{
+    background-color: $color-white-1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 10;
+    .navbar-nav {
+        align-items: center;
+    }
+    .nav-item {
+        padding-right: $pd-1;
+        .nav-link {
+            @include styleText($color-dark-2,$fs-1,$fw-3);
+            transition: .3s all;
+            position: relative;
+            &:hover {
+                @include styleText($color-purple-1,$fs-1,$fw-3) ;
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                z-index: 5;
+                pointer-events: none;
+                margin-left: -4px;
+                bottom: -20px;
+                left: 20px;
+                width: 8px;
+                height: 8px;
+                border-radius: $bd-radius-2;
+                background-color: $color-purple-1;
+                transition: all .2s;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                display: block;
+                
+            }
+            &:hover::after {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+               
+            }             
+        };
+        &.active {
+            .nav-link {
+                &::after{
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+    .topBarHeader{
+        display: flex;
+        align-items: center;
+        .phoneNumber button {
+            border: $bd-1 solid $color-purple-1;
+            transition: .3s all ;
+            box-shadow: 0 0 0 3px $color-purple-1 inset;
+            margin: $mg-1;
+            position: relative;
+            @include styleButton($pd-2,$pd-4,$color-purple-1,$bd-radius-1);
+            @include styleText($color-white-1,$fs-4,$fw-1);
+           
+            & i {
+                padding:$pd-2;
+            }
+            &:hover {
+                @include styleButtonHover($color-trans,$color-purple-1,$bd-1 solid $color-purple-1);
+                box-shadow: 0 0 0 1px $color-purple-1 inset;           
+            }
+        };
+        & a {
+            padding:$pd-2;
+            @include styleText($color-dark-2,$fs-1,$fw-3) ;
+            transition: .3s all;
+            &:hover {
+                @include styleText($color-purple-1,$fs-1,$fw-3)
+            }
+    }
+    } 
+}
+
+
+// Reponsive 
+@include mediaQuery("large") {
+    #header {
+        .navbar-nav {
+            text-align: center;
+            background-color: $color-white-1;
+            .nav-item{
+                .nav-link::after{
+                    display: none;
+                }
+            }
+            .topBarHeader {
+                display: block;
+            }
+        }
+    }
+}

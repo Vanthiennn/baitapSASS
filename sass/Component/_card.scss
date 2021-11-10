@@ -1,0 +1,50 @@
+#card_sass {
+    background-color: $color-purple-2;
+    position: relative;
+    .card__content {
+        position: relative;
+        z-index: 3;
+        padding-top: 2em;
+        .card_items{
+            padding-bottom: 2em ;
+            padding-top: 2em ;
+            
+        }
+        .card {
+            border: none;
+            transition: all .3s;
+            overflow: hidden;
+            transform: scale3d(1,1,1);
+            &:hover {
+                box-shadow: 0 30px 30px -10px rgba($color-dark-1, 0.2); 
+            }
+            &:hover img {
+                transform: scale3d(1.05,1.05,1.05);
+                transition: transform 650ms ease-in-out
+            }
+        }
+    
+        .card-body {
+            text-align: center;
+            & .card-title {
+                @include styleText($color-purple-1,$fs-2,$fw-3)
+            }
+            & .card-name {
+                font-weight: $fw-3;
+            }
+            & .card-text {
+                @include styleText($color-dark-2,$fs-1,$fw-2)
+            }
+        }
+    }
+    
+    .bottom_card{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        & img{
+            width: 100%;
+        }
+    } 
+}
