@@ -375,7 +375,7 @@ html, body {
 #footer {
   padding-top: 4em;
   padding-bottom: 12em;
-  background-image: url(../../img/footer_background.jpg);
+  background-image: url(../img/footer_background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
